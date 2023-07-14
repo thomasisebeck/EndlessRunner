@@ -41,3 +41,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Stars
+    uniqueID: 1925864415
+    locked: 0
+  - name: Light
+    uniqueID: 4155148821
+    locked: 0
+  - name: Mountain
+    uniqueID: 4068386383
+    locked: 0
+  - name: BackTrees
+    uniqueID: 1231413279
+    locked: 0
+  - name: MiddleTrees
+    uniqueID: 2322250613
+    locked: 0
+  - name: FrontTrees
+    uniqueID: 3816559297
+    locked: 0
