@@ -15,7 +15,10 @@ public class CameraFollow : MonoBehaviour
     private Vector3 offset;
 
     [SerializeField]
-    private float YAdjustment; 
+    private float YAdjustment;
+
+    [SerializeField]
+    private float YFollowSpeedMultiplier;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +34,6 @@ public class CameraFollow : MonoBehaviour
         targetPosition.y += YAdjustment;
 
         // Smoothly move the camera towards the target position using Lerp
-        transform.position = Vector3.Lerp(transform.position, new Vector3(targetPosition.x, targetPosition.y * YBias, targetPosition.z), followSpeed * Time.deltaTime);
+        transform.position = Vector3.Lerp(transform.position, new Vector3(targetPosition.x, targetPosition.y * YBias * YFollowSpeedMultiplier, targetPosition.z), followSpeed * Time.deltaTime);
     }
 }

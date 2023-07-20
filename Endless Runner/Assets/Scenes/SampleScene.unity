@@ -272,9 +272,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 1408199738}
-  followSpeed: 3
+  followSpeed: 5
   YBias: 0.3
-  YAdjustment: 1.3
+  YAdjustment: 2.14
+  YFollowSpeedMultiplier: 0.2
 --- !u!1 &569181169
 GameObject:
   m_ObjectHideFlags: 0
@@ -796,16 +797,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29f797e5ef46aa4e963b89cf7a3fa9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 5
+  jumpForce: 4.5
   groundDistance: 0.2
   groundCheck: {fileID: 246218148}
   groundMask:
     serializedVersion: 2
     m_Bits: 64
-  upwardsMultiplier: 2
-  gravityScale: 7
-  snapDownThreshold: 2
-  snapDownForce: 10
+  upwardsMultiplier: 2.5
+  gravityScale: 8
+  snapDownThreshold: 5
+  snapDownForce: 5
   jumpBoost: 2
 --- !u!50 &1408199743
 Rigidbody2D:
