@@ -7,10 +7,16 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField]
     public float moveSpeed;
+
+    private Animator animator;
+
+    const float LOWER = 5f;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -24,5 +30,20 @@ public class PlayerMovement : MonoBehaviour
 
         // Apply the new position to the GameObject
         transform.position = newPositionVector;
+
+        if (Input.GetKeyDown(KeyCode.S)) //Roll
+        {
+            animator.SetBool("isRolling", true);
+        }
+
+        if (Input.GetKey(KeyCode.S))
+        {
+            gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y - LOWER, gameObject.transform.position.z);
+        }
+
+        if (Input.GetKeyUp(KeyCode.S))
+        {
+            animator.SetBool("isRolling", false);
+        }
     }
 }

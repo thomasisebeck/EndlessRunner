@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -29,20 +31,49 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float jumpBoost;
 
+    [SerializeField]
+    private Animator animator;
+
+
+    private bool reachedApexOfJump; 
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
+        animator = gameObject.GetComponent<Animator>();
+        reachedApexOfJump = false;
     }
 
 
     void jump()
     {
+        animator.SetBool("hasFallen", false);
+        animator.SetBool("isRising", true);
         gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + jumpBoost);
         rb.AddForce(Vector3.up * jumpForce * upwardsMultiplier, ForceMode2D.Impulse);
         isGrounded = false;
     }
 
-  
+    private void FixedUpdate()
+    {
+        if (!isGrounded && rb.velocity.y <= 0.0f && !reachedApexOfJump)
+        {
+            reachedApexOfJump = true;
+            Debug.Log("reached top!");
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
+            reachedApexOfJump = false; // Reset the flag when the player touches the ground.
+            Debug.Log("grounded");
+            animator.SetBool("isRising", false);
+        }
+    }
+
+
     // Update is called once per frame
     void Update()
     {
@@ -56,8 +87,14 @@ public class PlayerController : MonoBehaviour
             gameObject.transform.position = new Vector3(gameObject.transform.position.x, -1f, gameObject.transform.position.z);
         }
 
+        if (gameObject.transform.position.y <= -0.2)
+        {
+            animator.SetBool("hasFallen", true);
+        }
+
 
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+
     }
 }
 
