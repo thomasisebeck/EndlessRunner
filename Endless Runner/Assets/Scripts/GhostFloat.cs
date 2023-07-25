@@ -17,6 +17,8 @@ public class GhostFloat : MonoBehaviour
     [SerializeField]
     private float timeUntilDeath; 
 
+    public PlayerController playerController;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,5 +41,10 @@ public class GhostFloat : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        PlayerController.die();
     }
 }

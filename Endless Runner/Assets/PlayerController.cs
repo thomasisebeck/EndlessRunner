@@ -73,6 +73,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public static void die()
+    {
+        Debug.Log("KILL PLAYER");
+        //todo: kill the player
+    }
+
 
     // Update is called once per frame
     void Update()
