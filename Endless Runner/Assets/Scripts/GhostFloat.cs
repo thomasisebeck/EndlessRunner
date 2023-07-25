@@ -12,10 +12,16 @@ public class GhostFloat : MonoBehaviour
 
     private Vector3 initialPosition;
 
+    private float timer;
+
+    [SerializeField]
+    private float timeUntilDeath; 
+
     // Start is called before the first frame update
     void Start()
     {
         initialPosition = transform.position;
+        timer = 0; 
     }
 
     // Update is called once per frame
@@ -26,5 +32,12 @@ public class GhostFloat : MonoBehaviour
 
         // Set the new position of the GameObject.
         transform.position = new Vector3(transform.position.x, newY, transform.position.z);
+
+        timer += Time.deltaTime;
+
+        if (timer > timeUntilDeath)
+        {
+            Destroy(gameObject);
+        }
     }
 }
