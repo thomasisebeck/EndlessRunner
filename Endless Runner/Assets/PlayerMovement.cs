@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
         // Apply the new position to the GameObject
         transform.position = newPositionVector;
 
-        if (Input.GetKeyDown(KeyCode.S)) //Roll
+        if (Input.GetKey(KeyCode.S)) //Roll
         {
             animator.SetBool("isRolling", true);
         }
