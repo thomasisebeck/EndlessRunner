@@ -371,13 +371,14 @@ GameObject:
   - component: {fileID: 726813536}
   - component: {fileID: 726813538}
   - component: {fileID: 726813537}
+  - component: {fileID: 726813539}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &726813536
 RectTransform:
   m_ObjectHideFlags: 0
@@ -439,6 +440,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 726813535}
   m_CullTransparentMesh: 1
+--- !u!114 &726813539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726813535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61f6519c555ba024683bf49eee13323c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: {fileID: 1086062495}
 --- !u!1 &757188470
 GameObject:
   m_ObjectHideFlags: 0
@@ -1333,7 +1347,7 @@ GameObject:
   - component: {fileID: 1408199744}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1464,6 +1478,7 @@ MonoBehaviour:
   snapDownForce: 5
   jumpBoost: 2
   animator: {fileID: 0}
+  gameOverScreen: {fileID: 726813535}
 --- !u!50 &1408199743
 Rigidbody2D:
   serializedVersion: 4

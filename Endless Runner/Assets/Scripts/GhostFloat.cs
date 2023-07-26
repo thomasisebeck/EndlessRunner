@@ -15,15 +15,13 @@ public class GhostFloat : MonoBehaviour
     private float timer;
 
     [SerializeField]
-    private float timeUntilDeath; 
-
-    public PlayerController playerController;
+    private float timeUntilDeath;
 
     // Start is called before the first frame update
     void Start()
     {
         initialPosition = transform.position;
-        timer = 0; 
+        timer = 0;
     }
 
     // Update is called once per frame
@@ -45,6 +43,10 @@ public class GhostFloat : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        PlayerController.die();
+        if (collision.CompareTag("Player"))
+        {
+            PlayerController playerController = collision.GetComponent<PlayerController>();
+            playerController.die();
+        }
     }
 }
