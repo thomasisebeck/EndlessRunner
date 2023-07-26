@@ -79,6 +79,7 @@ public class PlayerController : MonoBehaviour
     {
         print("PLayer dies!!!");
         gameOverScreen.SetActive(true);
+        animator.SetBool("isDead", true);
     }
 
 
