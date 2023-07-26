@@ -46,7 +46,8 @@ public class GhostFloat : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             PlayerController playerController = collision.GetComponent<PlayerController>();
-            playerController.die();
+            if (playerController.GetComponent<PlayerController>().getIsRolling() == false) //not rolling
+                playerController.die();
         }
     }
 }

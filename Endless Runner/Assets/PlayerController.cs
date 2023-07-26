@@ -82,6 +82,11 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("isDead", true);
     }
 
+    public bool getIsRolling()
+    {
+        return animator.GetBool("isRolling");
+    }
+
 
     // Update is called once per frame
     void Update()
