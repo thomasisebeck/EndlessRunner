@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
 
     const float LOWER = 5f;
 
+    public PlayerController player;
+
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
-        if (animator.GetBool("isDead"))
+        if (player.isDead)
             return;
 
         // Calculate the new position based on the current position and the speed

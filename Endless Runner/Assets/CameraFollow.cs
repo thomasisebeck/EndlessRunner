@@ -20,6 +20,9 @@ public class CameraFollow : MonoBehaviour
     [SerializeField]
     private float YFollowSpeedMultiplier;
 
+    [SerializeField]
+    private PlayerController playerController;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,12 +31,17 @@ public class CameraFollow : MonoBehaviour
 
     private void LateUpdate()
     {
-        // Calculate the desired camera position based on the player's position and the offset
-        Vector3 targetPosition = playerTransform.position + offset;
+        if (!playerController.isDead)
+        {
+            // Calculate the desired camera position based on the player's position and the offset
+            Vector3 targetPosition = playerTransform.position + offset;
 
-        targetPosition.y += YAdjustment;
+            targetPosition.y += YAdjustment;
 
-        // Smoothly move the camera towards the target position using Lerp
-        transform.position = Vector3.Lerp(transform.position, new Vector3(targetPosition.x, targetPosition.y * YBias * YFollowSpeedMultiplier, targetPosition.z), followSpeed * Time.deltaTime);
+            // Smoothly move the camera towards the target position using Lerp
+            transform.position = Vector3.Lerp(transform.position, new Vector3(targetPosition.x, targetPosition.y * YBias * YFollowSpeedMultiplier, targetPosition.z), followSpeed * Time.deltaTime);
+        }
     }
+
+
 }

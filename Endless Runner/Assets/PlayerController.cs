@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
 
     private bool isGrounded = true;
 
+    public bool isDead;
+
     Rigidbody2D rb;
 
     public Transform groundCheck;
@@ -43,6 +45,7 @@ public class PlayerController : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody2D>();
         animator = gameObject.GetComponent<Animator>();
         reachedApexOfJump = false;
+        isDead = false;
     }
 
 
@@ -79,7 +82,9 @@ public class PlayerController : MonoBehaviour
     {
         print("PLayer dies!!!");
         gameOverScreen.SetActive(true);
-        animator.SetBool("isDead", true);
+        animator.SetLayerWeight(1, 1f);
+        animator.SetTrigger("isDead");
+        isDead = true;
     }
 
     public bool getIsRolling()

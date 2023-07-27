@@ -276,6 +276,7 @@ MonoBehaviour:
   YBias: 0.3
   YAdjustment: 2.14
   YFollowSpeedMultiplier: 0.2
+  playerController: {fileID: 1408199742}
 --- !u!1 &569181169
 GameObject:
   m_ObjectHideFlags: 0
@@ -1454,6 +1455,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 8
+  player: {fileID: 1408199742}
 --- !u!114 &1408199742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1468,6 +1470,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpForce: 4.5
   groundDistance: 0.2
+  isDead: 0
   groundCheck: {fileID: 246218148}
   groundMask:
     serializedVersion: 2
