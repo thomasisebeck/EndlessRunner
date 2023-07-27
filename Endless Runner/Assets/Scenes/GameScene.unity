@@ -305,6 +305,7 @@ MonoBehaviour:
   - {fileID: 569181169}
   - {fileID: 1824503529}
   - {fileID: 1408723007}
+  overlap: 1
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,8 +320,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 1408199738}
   followSpeed: 5
-  YBias: 0.3
-  YAdjustment: 2.14
+  YBias: 0.2
+  YAdjustment: 4
   YFollowSpeedMultiplier: 0.2
   playerController: {fileID: 1408199742}
 --- !u!1 &569181169
@@ -333,6 +334,7 @@ GameObject:
   m_Component:
   - component: {fileID: 569181171}
   - component: {fileID: 569181170}
+  - component: {fileID: 569181172}
   m_Layer: 0
   m_Name: Back
   m_TagString: Untagged
@@ -407,6 +409,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &569181172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 569181169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2354bdb2abafc604da1a79a7cae8ad2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parallaxSpeed: 0.1
 --- !u!1 &726813535
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,7 +565,7 @@ MonoBehaviour:
   player: {fileID: 1408199737}
   spawnOffsetRight: 20
   spawnOffsetTopFloat: -1
-  spawnOffsetTopGround: 0
+  spawnOffsetTopGround: -2.5
 --- !u!1 &873078100
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,6 +846,7 @@ GameObject:
   m_Component:
   - component: {fileID: 939992793}
   - component: {fileID: 939992792}
+  - component: {fileID: 939992794}
   m_Layer: 0
   m_Name: Middle
   m_TagString: Untagged
@@ -905,6 +921,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &939992794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939992791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2354bdb2abafc604da1a79a7cae8ad2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parallaxSpeed: 0.08
 --- !u!1 &958172143
 GameObject:
   m_ObjectHideFlags: 0
@@ -1079,7 +1108,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -133}
-  m_SizeDelta: {x: 259.0457, y: 43.2061}
+  m_SizeDelta: {x: 223.7, y: 51}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1052146124
 MonoBehaviour:
@@ -1150,7 +1179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.54044837, g: 0.27539036, b: 0.5660378, a: 0.5882353}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.4392157}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1222,8 +1251,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 1.550003}
+  m_SizeDelta: {x: 0, y: 3.0999937}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1086062495
 MonoBehaviour:
@@ -1254,8 +1283,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294835709
-  m_fontColor: {r: 0.990566, g: 0.990566, b: 0.990566, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1272,8 +1301,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 30.4
+  m_fontSizeBase: 30.4
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1465,6 +1494,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1356400506}
   - component: {fileID: 1356400505}
+  - component: {fileID: 1356400507}
   m_Layer: 0
   m_Name: Front
   m_TagString: Untagged
@@ -1539,6 +1569,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1356400507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356400504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2354bdb2abafc604da1a79a7cae8ad2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parallaxSpeed: 0.05
 --- !u!1 &1408199737
 GameObject:
   m_ObjectHideFlags: 0
@@ -1737,6 +1780,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1408723009}
   - component: {fileID: 1408723008}
+  - component: {fileID: 1408723010}
   m_Layer: 0
   m_Name: sky
   m_TagString: Untagged
@@ -1811,6 +1855,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1408723010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408723007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2354bdb2abafc604da1a79a7cae8ad2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parallaxSpeed: 0.15
 --- !u!1 &1439373842
 GameObject:
   m_ObjectHideFlags: 0
@@ -1923,6 +1980,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1824503531}
   - component: {fileID: 1824503530}
+  - component: {fileID: 1824503532}
   m_Layer: 0
   m_Name: Mountains
   m_TagString: Untagged
@@ -1997,3 +2055,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1824503532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824503529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2354bdb2abafc604da1a79a7cae8ad2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parallaxSpeed: 0.14
