@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -299, y: -73.937}
+  m_AnchoredPosition: {x: -356, y: -92.546}
   m_SizeDelta: {x: 557.0308, y: 185.0927}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &80784957
@@ -212,8 +212,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 57.7
-  m_fontSizeBase: 57.7
+  m_fontSize: 88.6
+  m_fontSizeBase: 88.6
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -5.66626, y: 0, z: 1.3787231, w: -71.6819}
+  m_margin: {x: -5.66626, y: 0, z: -158.89166, w: -71.6819}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -274,7 +274,7 @@ GameObject:
   - component: {fileID: 134044598}
   - component: {fileID: 134044597}
   - component: {fileID: 134044596}
-  - component: {fileID: 134044599}
+  - component: {fileID: 134044595}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -300,9 +300,21 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -258, y: -226.8}
-  m_SizeDelta: {x: 251.3889, y: 57.3126}
+  m_AnchoredPosition: {x: -612.5526, y: -379.97253}
+  m_SizeDelta: {x: 373.9637, y: 85.2577}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &134044595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134044593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccfd9809c92b5be488153595971ae464, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &134044596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,9 +359,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 134044599}
-        m_TargetAssemblyTypeName: ExitGame, Assembly-CSharp
-        m_MethodName: ExitOnClick
+      - m_Target: {fileID: 134044595}
+        m_TargetAssemblyTypeName: RetryButton, Assembly-CSharp
+        m_MethodName: OnRetryButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -397,18 +409,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 134044593}
   m_CullTransparentMesh: 1
---- !u!114 &134044599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 134044593}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: add399b72ac62e843856c7866758ebc9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &283783717
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,8 +447,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 411.22778, y: -239}
-  m_SizeDelta: {x: 180.9334, y: 57.3126}
+  m_AnchoredPosition: {x: 790.58, y: -463}
+  m_SizeDelta: {x: 338.8376, y: 107.3305}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &283783720
 MonoBehaviour:
@@ -612,8 +612,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8.271, y: -20}
-  m_SizeDelta: {x: 1071.8412, y: 622.4506}
+  m_AnchoredPosition: {x: -5.77, y: -7.4619}
+  m_SizeDelta: {x: 1980.3606, y: 1127.5354}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &319635554
 MonoBehaviour:
@@ -688,8 +688,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -116, y: 187}
-  m_SizeDelta: {x: 669.0319, y: 157.9306}
+  m_AnchoredPosition: {x: -444, y: 323}
+  m_SizeDelta: {x: 811.3846, y: 230.6886}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &459783879
 MonoBehaviour:
@@ -738,8 +738,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 155.9
-  m_fontSizeBase: 155.9
+  m_fontSize: 220.23
+  m_fontSizeBase: 220.23
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -774,7 +774,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: -25.94519, z: -53.222656, w: 0}
+  m_margin: {x: 0, y: -25.94519, z: -318.94763, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1052,7 +1052,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.75}
+  m_AnchoredPosition: {x: 0, y: -0.7499962}
   m_SizeDelta: {x: 0, y: -1.5000015}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1427367041
@@ -1102,8 +1102,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 33.91
-  m_fontSizeBase: 33.91
+  m_fontSize: 51.9
+  m_fontSizeBase: 51.9
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1190,8 +1190,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -258, y: -144}
-  m_SizeDelta: {x: 251.3889, y: 57.3126}
+  m_AnchoredPosition: {x: -609, y: -241.58}
+  m_SizeDelta: {x: 381.0692, y: 86.8776}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1633750659
 MonoBehaviour:
@@ -1490,8 +1490,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 33.91
-  m_fontSizeBase: 33.91
+  m_fontSize: 51.9
+  m_fontSizeBase: 51.9
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1625,8 +1625,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 33.91
-  m_fontSizeBase: 33.91
+  m_fontSize: 52.2
+  m_fontSizeBase: 52.2
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
