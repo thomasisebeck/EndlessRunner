@@ -35,6 +35,7 @@ public class GhostSpawner : MonoBehaviour
         if (spawnTime < 0)
         {
             Vector3 spawnPosition = player.transform.position + Vector3.right * spawnOffsetRight;
+            spawnPosition.y = 0;
             spawnPosition += Vector3.up * spawnOffsetTop; 
             spawnTime = spawnRate;
             Instantiate(ghost, spawnPosition, Quaternion.identity);

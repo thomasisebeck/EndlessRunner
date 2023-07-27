@@ -17,9 +17,14 @@ public class GhostFloat : MonoBehaviour
     [SerializeField]
     private float timeUntilDeath;
 
+    private GameObject player;
+
     //to check for offscreen
     private Renderer objectRenderer;
     private Camera mainCamera;
+    private bool givePoints;
+
+    private PointsManagement pointsManager;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +34,12 @@ public class GhostFloat : MonoBehaviour
 
         objectRenderer = GetComponent<Renderer>();
         mainCamera = Camera.main;
+
+        givePoints = true;
+
+        player = GameObject.FindGameObjectWithTag("Player");
+
+        pointsManager = GameObject.Find("PointsManager").GetComponent<PointsManagement>();
     }
 
     // Update is called once per frame
@@ -41,6 +52,25 @@ public class GhostFloat : MonoBehaviour
         transform.position = new Vector3(transform.position.x, newY, transform.position.z);
 
         timer += Time.deltaTime;
+
+        //check to give player points
+        Transform playerPosition = player.transform;
+
+        if (gameObject.transform.position.x < playerPosition.transform.position.x && givePoints)
+        {
+            givePoints = false;
+
+            if (pointsManager != null)
+            {
+                pointsManager.increment();
+            }
+            else
+            {
+                Debug.Log("Points manager is null!!!");
+            }
+            
+        }
+        
 
         if (timer > timeUntilDeath && IsOffscreen())
         {
