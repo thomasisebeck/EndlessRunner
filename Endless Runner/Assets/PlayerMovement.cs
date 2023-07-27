@@ -22,6 +22,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (animator.GetBool("isDead"))
+            return;
+
         // Calculate the new position based on the current position and the speed
         float newPosition = transform.position.x + (moveSpeed * Time.deltaTime);
 
