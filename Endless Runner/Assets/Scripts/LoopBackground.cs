@@ -12,6 +12,9 @@ public class LoopBackground : MonoBehaviour
     private Camera mainCamera;
     private Vector2 screenBounds;
 
+    [SerializeField]
+    private float overlap;
+
     private void Start()
     {
         mainCamera = gameObject.GetComponent<Camera>();

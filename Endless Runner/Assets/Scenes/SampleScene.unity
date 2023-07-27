@@ -544,11 +544,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef98b901f5446774f92f8e181989b028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ghost: {fileID: 3565153341463006000, guid: 580df5a7d352a844a9d9e16dcec5c1c7, type: 3}
+  ghostFloat: {fileID: 3565153341463006000, guid: 580df5a7d352a844a9d9e16dcec5c1c7, type: 3}
+  ghostGround: {fileID: 3565153341463006000, guid: 394a355c76ee1184f87cf63bbd061588, type: 3}
   spawnRate: 3
   player: {fileID: 1408199737}
   spawnOffsetRight: 20
-  spawnOffsetTop: -0.92
+  spawnOffsetTopFloat: -1
+  spawnOffsetTopGround: 0
 --- !u!1 &873078100
 GameObject:
   m_ObjectHideFlags: 0

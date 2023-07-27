@@ -6,7 +6,10 @@ public class GhostSpawner : MonoBehaviour
 {
 
     [SerializeField]
-    private GameObject ghost;
+    private GameObject ghostFloat;
+
+    [SerializeField]
+    private GameObject ghostGround;
 
     [SerializeField]
     private float spawnRate;
@@ -18,7 +21,10 @@ public class GhostSpawner : MonoBehaviour
     private float spawnOffsetRight;
 
     [SerializeField]
-    private float spawnOffsetTop;
+    private float spawnOffsetTopFloat;
+
+    [SerializeField]
+    private float spawnOffsetTopGround;
 
     private float spawnTime;
 
@@ -36,9 +42,21 @@ public class GhostSpawner : MonoBehaviour
         {
             Vector3 spawnPosition = player.transform.position + Vector3.right * spawnOffsetRight;
             spawnPosition.y = 0;
-            spawnPosition += Vector3.up * spawnOffsetTop; 
             spawnTime = spawnRate;
-            Instantiate(ghost, spawnPosition, Quaternion.identity);
+
+            int result = Random.Range(0, 2
+                );
+
+            if (result == 0)
+            {
+                spawnPosition += Vector3.up * spawnOffsetTopFloat;
+                Instantiate(ghostFloat, spawnPosition, Quaternion.identity);
+            }
+            else
+            {
+                spawnPosition += Vector3.up * spawnOffsetTopGround;
+                Instantiate(ghostGround, spawnPosition, Quaternion.identity);
+            }
         }
     }
 }
