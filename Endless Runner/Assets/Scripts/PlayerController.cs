@@ -39,6 +39,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private GameObject gameOverScreen;
 
+    private AudioSource[] jumpSounds;
+
     private bool reachedApexOfJump; 
     void Start()
     {
@@ -46,11 +48,18 @@ public class PlayerController : MonoBehaviour
         animator = gameObject.GetComponent<Animator>();
         reachedApexOfJump = false;
         isDead = false;
+
+        jumpSounds = GameObject.Find("JumpSounds").GetComponentsInChildren<AudioSource>();
     }
 
 
     void jump()
     {
+        if (jumpSounds.Length > 0)
+        {
+            int randomIndex = Random.Range(0, jumpSounds.Length);
+            jumpSounds[randomIndex].Play();
+        }
         animator.SetBool("hasFallen", false);
         animator.SetBool("isRising", true);
         gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + jumpBoost);

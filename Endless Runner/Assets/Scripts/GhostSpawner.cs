@@ -58,7 +58,7 @@ public class GhostSpawner : MonoBehaviour
     void Start()
     {
         spawnTime = spawnRate;
-        
+
         waveMessageTimeLeft = showWaveMessageFor;
         waveNumberText.text = "Wave 1";
         enemiesSpawnedInWave = 0;
