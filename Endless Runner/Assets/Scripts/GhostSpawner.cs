@@ -74,9 +74,14 @@ public class GhostSpawner : MonoBehaviour
             waveMessageTimeLeft -= Time.deltaTime;
             waveNumberText.gameObject.SetActive(true);
         }
-        else
+
+        if (waveMessageTimeLeft < 0)
         {
             waveNumberText.gameObject.SetActive(false);
+        }
+
+        if (waveMessageTimeLeft < 2)
+        {
             spawnTime -= Time.deltaTime;
             if (spawnTime < 0)
             {
@@ -109,6 +114,8 @@ public class GhostSpawner : MonoBehaviour
                 enemiesSpawnedInWave = 0;
                 waveNumber++;
                 waveMessageTimeLeft = showWaveMessageFor;
+
+                waitFor = waitForTime;
 
                 if (waveNumber < waves.Length)
                 {
