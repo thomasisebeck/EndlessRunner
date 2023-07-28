@@ -9,7 +9,8 @@ public class SceneLoader : MonoBehaviour
     private GameObject gameOverScreen;
     public void loadScene()
     {
-        gameOverScreen.SetActive(false);
+        if (gameOverScreen != null)
+            gameOverScreen.SetActive(false);
         SceneManager.LoadScene("GameScene");
     }
 }
