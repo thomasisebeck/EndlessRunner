@@ -31,6 +31,9 @@ public class GhostSpawner : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI waveNumberText;
 
+    [SerializeField]
+    private float waveSpawnTimeReduction;
+
     private float spawnTime;
     private int enemiesSpawnedInWave;
 
@@ -43,12 +46,13 @@ public class GhostSpawner : MonoBehaviour
 
     private int waveNumber;
 
+    private int waveNumberDisplay;
+
     [SerializeField]
     private float waitForTime;
 
-    private float waitFor; 
+    private float waitFor;
 
-    
 
     // Start is called before the first frame update
     void Start()
@@ -58,7 +62,8 @@ public class GhostSpawner : MonoBehaviour
         waveMessageTimeLeft = showWaveMessageFor;
         waveNumberText.text = "Wave 1";
         enemiesSpawnedInWave = 0;
-        waitFor = 0; 
+        waitFor = 0;
+        waveNumberDisplay = 0;
     }
 
     // Update is called once per frame
@@ -113,19 +118,25 @@ public class GhostSpawner : MonoBehaviour
             {
                 enemiesSpawnedInWave = 0;
                 waveNumber++;
+                waveNumberDisplay++;
                 waveMessageTimeLeft = showWaveMessageFor;
+
+                spawnRate *= waveSpawnTimeReduction;
 
                 waitFor = waitForTime;
 
-                if (waveNumber < waves.Length)
+                if (waveNumber < waves.Length - 1)
                 {
-                    waveNumberText.text = "Wave " + (waveNumber + 1); waveNumberText.text = "Wave " + (waveNumber + 1);
+                    waveNumber++;
                 }
                 else
                 {
-                    Debug.Log("Activate infinite mode!");
+                    waveNumber = waves.Length - 1;
+                    waves[waveNumber] = Random.Range(2, 10);
                 }
-                
+
+                waveNumberText.text = "Wave " + (waveNumberDisplay + 1);
+
             }
         }
     }

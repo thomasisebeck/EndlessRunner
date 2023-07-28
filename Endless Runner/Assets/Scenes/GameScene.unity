@@ -671,9 +671,11 @@ MonoBehaviour:
   spawnOffsetTopFloat: -1
   spawnOffsetTopGround: -2.5
   waveNumberText: {fileID: 2031026051}
+  waveSpawnTimeReduction: 0.6
   showWaveMessageFor: 3
-  waves: 02000000020000000200000002000000
+  waves: 0100000001000000
   waitForTime: 2
+  minSpawnTimeBetweenSameEnemey: 3
 --- !u!114 &757188473
 MonoBehaviour:
   m_ObjectHideFlags: 0
