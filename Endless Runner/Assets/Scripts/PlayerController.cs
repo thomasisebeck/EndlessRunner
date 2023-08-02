@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.Animations;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -40,6 +36,8 @@ public class PlayerController : MonoBehaviour
     private GameObject gameOverScreen;
 
     private AudioSource[] jumpSounds;
+    private AudioSource rollSound;
+    private AudioSource dieSound;
 
     private bool reachedApexOfJump; 
     void Start()
@@ -50,6 +48,8 @@ public class PlayerController : MonoBehaviour
         isDead = false;
 
         jumpSounds = GameObject.Find("JumpSounds").GetComponentsInChildren<AudioSource>();
+        rollSound = GetComponent<AudioSource>();
+        dieSound = GetComponents<AudioSource>()[1];
     }
 
 
@@ -89,11 +89,15 @@ public class PlayerController : MonoBehaviour
 
     public void die()
     {
-        print("PLayer dies!!!");
-        gameOverScreen.SetActive(true);
-        animator.SetLayerWeight(1, 1f);
-        animator.SetTrigger("isDead");
-        isDead = true;
+        if (!isDead)
+        {
+            dieSound.Play();
+            print("PLayer dies!!!");
+            gameOverScreen.SetActive(true);
+            animator.SetLayerWeight(1, 1f);
+            animator.SetTrigger("isDead");
+            isDead = true;
+        }
     }
 
     public bool getIsRolling()

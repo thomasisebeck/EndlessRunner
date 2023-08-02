@@ -13,4 +13,14 @@ public class SceneLoader : MonoBehaviour
             gameOverScreen.SetActive(false);
         SceneManager.LoadScene("GameScene");
     }
+
+    public void mainMenu()
+    {
+        SceneManager.LoadScene("MenuScene");
+    }
+
+    public void exit()
+    {
+       Application.Quit();
+    }
 }

@@ -17,6 +17,9 @@ public class GhostFloat : MonoBehaviour
     [SerializeField]
     private float timeUntilDeath;
 
+    [SerializeField]
+    private bool isLowGhost;
+
     private GameObject player;
 
     //to check for offscreen
@@ -93,6 +96,9 @@ public class GhostFloat : MonoBehaviour
         {
             PlayerController playerController = collision.GetComponent<PlayerController>();
             if (playerController.GetComponent<PlayerController>().getIsRolling() == false) //not rolling
+                playerController.die();
+
+            if (isLowGhost)
                 playerController.die();
         }
     }

@@ -53,6 +53,9 @@ public class GhostSpawner : MonoBehaviour
 
     private float waitFor;
 
+    [SerializeField]
+    PlayerController playerController;
+
 
     // Start is called before the first frame update
     void Start()
@@ -69,6 +72,9 @@ public class GhostSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (playerController.isDead)
+            return;
 
         if (waitFor > 0)
         {
@@ -122,6 +128,9 @@ public class GhostSpawner : MonoBehaviour
                 waveMessageTimeLeft = showWaveMessageFor;
 
                 spawnRate *= waveSpawnTimeReduction;
+
+                if (waveSpawnTimeReduction < 0.95)
+                    waveSpawnTimeReduction += 0.01f;
 
                 waitFor = waitForTime;
 

@@ -101,6 +101,7 @@ MonoBehaviour:
   floatHeight: 0.3
   floatSpeed: 1.5
   timeUntilDeath: 5
+  isLowGhost: 1
 --- !u!58 &3989423945723271264
 CircleCollider2D:
   m_ObjectHideFlags: 0

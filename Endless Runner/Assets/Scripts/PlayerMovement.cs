@@ -14,6 +14,9 @@ public class PlayerMovement : MonoBehaviour
 
     public PlayerController player;
 
+    [SerializeField]
+    private AudioSource rollSound;
+
 
     // Start is called before the first frame update
     void Start()
@@ -37,9 +40,10 @@ public class PlayerMovement : MonoBehaviour
         // Apply the new position to the GameObject
         transform.position = newPositionVector;
 
-        if (Input.GetKey(KeyCode.S)) //Roll
+        if (Input.GetKeyDown(KeyCode.S)) //Roll
         {
             animator.SetBool("isRolling", true);
+            rollSound.Play();
         }
 
         if (Input.GetKey(KeyCode.S))
@@ -50,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.S))
         {
             animator.SetBool("isRolling", false);
+            rollSound.Stop();
         }
     }
 }
